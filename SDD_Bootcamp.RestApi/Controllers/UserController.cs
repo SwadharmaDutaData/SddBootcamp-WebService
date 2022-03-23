@@ -16,7 +16,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
         }
 
         // GET api/<UserController>/5
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public string Get(int id)
         {
             return "value";
@@ -29,13 +29,13 @@ namespace SDD_Bootcamp.RestApi.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
+        [HttpPut("update/{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE api/<UserController>/5
-        [HttpDelete("{id}")]
+        [HttpDelete("delete/{id}")]
         public void Delete(int id)
         {
         }
