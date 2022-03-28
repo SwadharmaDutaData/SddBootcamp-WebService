@@ -33,7 +33,7 @@ public class WebService : System.Web.Services.WebService
 
     [WebMethod]
     [SoapHeader("auth", Required = true, Direction = SoapHeaderDirection.InOut)]
-    [SoapDocumentMethod(Action = "http://www.sandev.com/", RequestNamespace = "http://www.sandev.com/Request", RequestElementName = "GetDataMahasiswaRequest", ResponseNamespace = "http://www.sandev.com/Response", ResponseElementName = "GetDataMahasiswaResponse")]
+    [SoapDocumentMethod(Action = "http://www.sandev.com/GetDataMahasiswa", RequestNamespace = "http://www.sandev.com/Request/DataMahasiswa/", RequestElementName = "GetDataMahasiswaRequest", ResponseNamespace = "http://www.sandev.com/Response/DataMahasiswa/", ResponseElementName = "GetDataMahasiswaResponse")]
     public SoapResponseBody<ObjectModel<List<MahasiswaModel>>> GetDataMahasiswa()
     {
 
@@ -88,7 +88,7 @@ public class WebService : System.Web.Services.WebService
 
     [WebMethod]
     [SoapHeader("auth", Required = true, Direction = SoapHeaderDirection.InOut)]
-    [SoapDocumentMethod(Action = "http://www.sandev.com/", RequestNamespace = "http://www.sandev.com/Request", RequestElementName = "GetDataMahasiswaByIdRequest", ResponseNamespace = "http://www.sandev.com/Response", ResponseElementName = "GetDataMahasiswaByIdResponse")]
+    [SoapDocumentMethod(Action = "http://www.sandev.com/GetDataMahasiswaById", RequestNamespace = "http://www.sandev.com/Request/MahasiswaById/", RequestElementName = "GetDataMahasiswaByIdRequest", ResponseNamespace = "http://www.sandev.com/Response/MahasiswaById/", ResponseElementName = "GetDataMahasiswaByIdResponse")]
     public SoapResponseBody<ObjectModel<MahasiswaModel>> GetDataMahasiswaById(int id)
     {
         SoapResponseBody<ObjectModel<MahasiswaModel>> responseBody = new SoapResponseBody<ObjectModel<MahasiswaModel>>();
@@ -145,7 +145,7 @@ public class WebService : System.Web.Services.WebService
 
     [WebMethod]
     [SoapHeader("auth", Required = true, Direction = SoapHeaderDirection.InOut)]
-    [SoapDocumentMethod(Action = "http://www.sandev.com/", RequestNamespace = "http://www.sandev.com/Request", RequestElementName = "LoginUserRequest", ResponseNamespace = "http://www.sandev.com/Response", ResponseElementName = "LoginUserResponse")]
+    [SoapDocumentMethod(Action = "http://www.sandev.com/LoginUser", RequestNamespace = "http://www.sandev.com/Request/LoginUser/", RequestElementName = "LoginUserRequest", ResponseNamespace = "http://www.sandev.com/Response/LoginUser/", ResponseElementName = "LoginUserResponse")]
     public MahasiswaModel LoginUser(string email, string npm)
     {
         MahasiswaModel mahasiswaModel = null;
@@ -162,7 +162,7 @@ public class WebService : System.Web.Services.WebService
 
     [WebMethod]
     [SoapHeader("auth", Required = true, Direction = SoapHeaderDirection.InOut)]
-    [SoapDocumentMethod(Action = "http://www.sandev.com/", RequestNamespace = "http://www.sandev.com/Request", RequestElementName = "AddMahasiswaRequest", ResponseNamespace = "http://www.sandev.com/Response", ResponseElementName = "AddMahasiswaResponse")]
+    [SoapDocumentMethod(Action = "http://www.sandev.com/AddMahasiswa", RequestNamespace = "http://www.sandev.com/Request/AddMahasiswa/", RequestElementName = "AddMahasiswaRequest", ResponseNamespace = "http://www.sandev.com/Response/AddMahasiswa/", ResponseElementName = "AddMahasiswaResponse")]
     public SoapResponseBody<MahasiswaModel> AddMahasiswa(SoapRequestBody<MahasiswaModel> model)
     {
         SoapResponseBody<MahasiswaModel> responBody = new SoapResponseBody<MahasiswaModel>();
@@ -215,7 +215,7 @@ public class WebService : System.Web.Services.WebService
 
     [WebMethod]
     [SoapHeader("auth", Required = true, Direction = SoapHeaderDirection.InOut)]
-    [SoapDocumentMethod(Action = "http://www.sandev.com/", RequestNamespace = "http://www.sandev.com/Request", RequestElementName = "UpdateMahasiswaRequest", ResponseNamespace = "http://www.sandev.com/Response", ResponseElementName = "UpdateMahasiswaResponse")]
+    [SoapDocumentMethod(Action = "http://www.sandev.com/UpdateMahasiswa", RequestNamespace = "http://www.sandev.com/Request/UpdateMahasiswa/", RequestElementName = "UpdateMahasiswaRequest", ResponseNamespace = "http://www.sandev.com/Response/UpdateMahasiswa/", ResponseElementName = "UpdateMahasiswaResponse")]
     public SoapResponseBody<ObjectModel<MahasiswaModel>> UpdateMahasiswa(int id, SoapRequestBody<MahasiswaModel> model)
     {
         SoapResponseBody<ObjectModel<MahasiswaModel>> responBody = new SoapResponseBody<ObjectModel<MahasiswaModel>>();
