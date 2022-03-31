@@ -191,7 +191,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
                     resultContent.ResponseMessage = $"Success Adding Data {nameof(TblJurusanModel)}";
                     resultContent.ResponseBody = responseContent;
 
-                    return Created("api/jurusan", resultContent);
+                    return StatusCode(201, resultContent);
                 }
                 else
                 {
@@ -275,14 +275,14 @@ namespace SDD_Bootcamp.RestApi.Controllers
                         resultContent.ResponseMessage = $"Success Updated Data {nameof(TblJurusanModel)}";
                         resultContent.ResponseBody = responseContent;
 
-                        return Created($"api/jurusan/update/{id}", resultContent);
+                        return StatusCode(201, resultContent);
                     }
                     else
                     {
                         responseContent.Content = "Failed";
 
                         resultContent.ErrorCode = 18;
-                        resultContent.ErrorMessage = "Failed Updated Data Mahasiswa";
+                        resultContent.ErrorMessage = "Failed Updated Data Jurusan";
                         resultContent.ErrorLink = null;
                         resultContent.ResponseType = OperationType.UpdateData.ToString();
                         resultContent.ResponseMessage = $"Failed Updated Data {nameof(TblJurusanModel)}";
@@ -293,7 +293,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
                 }
                 else
                 {
-                    responseContent.Content = "Mahasiswa Not Found";
+                    responseContent.Content = "Jurusan Not Found";
 
                     resultContent.ErrorCode = 17;
                     resultContent.ErrorMessage = "Failed Retrive Data Jurusan";
@@ -322,7 +322,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
 
         // DELETE api/<JurusanController>/5
         [HttpDelete("delete/{id}")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ResponseBodyModel<ResponseContentBodyModel<string>>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResponseBodyModel<ResponseContentBodyModel<string>>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ResponseBodyModel<ResponseContentBodyModel<string>>))]
         public IActionResult Delete(int id)
         {
@@ -368,7 +368,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
                         resultContent.ResponseMessage = $"Success Deleted Data {nameof(TblJurusanModel)}";
                         resultContent.ResponseBody = responseContent;
 
-                        return Created($"api/jurusan/delete/{id}", resultContent);
+                        return Ok(resultContent);
                     }
                     else
                     {

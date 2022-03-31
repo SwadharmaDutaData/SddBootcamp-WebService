@@ -191,7 +191,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
                     resultContent.ResponseMessage = $"Success Adding Data {nameof(MahasiswaModel)}";
                     resultContent.ResponseBody = responseContent;
 
-                    return Created("api/Mahasiswa", resultContent);
+                    return StatusCode(201, resultContent);
                 }
                 else
                 {
@@ -275,7 +275,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
                         resultContent.ResponseMessage = $"Success Updated Data {nameof(MahasiswaModel)}";
                         resultContent.ResponseBody = responseContent;
 
-                        return Created($"api/Mahasiswa/update/{id}", resultContent);
+                        return StatusCode(201, resultContent);
                     }
                     else
                     {
@@ -322,7 +322,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
 
         // DELETE api/<MahasiswaController>/5
         [HttpDelete("delete/{id}")]
-        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(ResponseBodyModel<ResponseContentBodyModel<string>>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ResponseBodyModel<ResponseContentBodyModel<string>>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ResponseBodyModel<ResponseContentBodyModel<string>>))]
         public IActionResult DeleteMahasiswa(int id)
         {
@@ -365,7 +365,7 @@ namespace SDD_Bootcamp.RestApi.Controllers
                         resultContent.ResponseMessage = $"Success Deleted Data {nameof(MahasiswaModel)}";
                         resultContent.ResponseBody = responseContent;
 
-                        return Created($"api/Mahasiswa/delete/{id}", resultContent);
+                        return Ok(resultContent);
                     }
                     else
                     {
